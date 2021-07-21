@@ -54,11 +54,11 @@ def cli(ctx, config):
     help=filterOperatorChoices_help
 )
 @click.option("--filter-match", help="Filter match string.", metavar="MATCH")
-@click.pass_context
+@click.pass_obj
 def userlist(ctx, filter_field, filter_operator, filter_match):
     """List users on the ISE deployment."""
 
-    cfg = json.load(ctx['config'])
+    cfg = json.load(obj['config'])
 
     if filter_match:
         filter = filter_field + "." + filter_operator + "." + filter_match
@@ -110,11 +110,15 @@ def userlist(ctx, filter_field, filter_operator, filter_match):
     help=filterOperatorChoices_help
 )
 @click.option("--filter-match", help="Filter match string.", metavar="MATCH")
-@click.pass_context
-def grouplist(ctx, filter_field, filter_operator, filter_match):
+@click.pass_obj
+def grouplist(obj, filter_field, filter_operator, filter_match):
     """List identity groups on the ISE deployment."""
 
-    cfg = json.load(ctx['config'])
+    pp.pprint(obj)
+
+    cfg = json.load(obj['config'])
+
+    pp.pprint(cfg)
     if filter_match:
         filter = filter_field + "." + filter_operator + "." + filter_match
 
@@ -164,11 +168,11 @@ def grouplist(ctx, filter_field, filter_operator, filter_match):
     help=filterOperatorChoices_help
 )
 @click.option("--filter-match", help="Filter match string.", metavar="MATCH")
-@click.pass_context
-def useraddgroup(ctx, group, filter_field, filter_operator, filter_match):
+@click.pass_obj
+def useraddgroup(obj, group, filter_field, filter_operator, filter_match):
     """Add user(s) to an identity group."""
 
-    cfg = json.load(ctx['config'])
+    cfg = json.load(obj['config'])
     if filter_match:
         filter = filter_field + "." + filter_operator + "." + filter_match
         print("Updating users with filter: " + filter)
