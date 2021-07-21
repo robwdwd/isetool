@@ -11,12 +11,17 @@ repository = "https://github.com/robwdwd/isetool"
 [tool.poetry.dependencies]
 python = "^3.6"
 requests = "^2.26.0"
+click = "^8.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+pydocstyle = "^6.1.1"
+flake8 = "^3.9.2"
+pylint = "^2.9.5"
+yapf = "^0.31.0"
 
 [tool.poetry.scripts]
-isetool = "isetool.cli:main"
+isetool = "isetool.cli:cli"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
