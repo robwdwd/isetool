@@ -6,12 +6,18 @@ authors = ["Rob Woodward <rob@emailplus.org>"]
 license = "BSD-2-Clause"
 readme = "README.md"
 repository = "https://github.com/robwdwd/isetool"
+include = ["README.md", "LICENSE"]
+
+[[tool.poetry.source]]
+name = "atsip02"
+url = "http://atsip02.lon.osspriv.colt.net:8080/simple/"
 
 
 [tool.poetry.dependencies]
 python = "^3.6"
 requests = "^2.26.0"
 click = "^8.0.1"
+urllib3 = "^1.26.6"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

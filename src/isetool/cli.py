@@ -55,7 +55,7 @@ def cli(ctx, config):
 )
 @click.option("--filter-match", help="Filter match string.", metavar="MATCH")
 @click.pass_obj
-def userlist(ctx, filter_field, filter_operator, filter_match):
+def userlist(obj, filter_field, filter_operator, filter_match):
     """List users on the ISE deployment."""
 
     cfg = json.load(obj['config'])
