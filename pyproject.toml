@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "isetool"
-version = "0.1.0"
+version = "1.0.0"
 description = "Command line for querying a Cisco ISE server"
 authors = ["Rob Woodward <rob@emailplus.org>"]
 license = "BSD-2-Clause"
@@ -9,7 +9,7 @@ repository = "https://github.com/robwdwd/isetool"
 include = ["README.md", "LICENSE"]
 
 [tool.poetry.dependencies]
-python = "^3.6, >=3.6.2"
+python = "^3.7"
 requests = "^2.26.0"
 click = "^8.0.1"
 urllib3 = "^1.26.6"
