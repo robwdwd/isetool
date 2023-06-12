@@ -90,6 +90,9 @@ class ISE(object):
 
         resp = self.iseSession.get(url, verify=False, params=params)
 
+        if resp.status_code in (401, 403):
+          raise Exception('User not authorised')
+
         if resp.status_code != 200:
             result = resp.json()
             error = self.join_errors(result["ERSResponse"]["messages"])

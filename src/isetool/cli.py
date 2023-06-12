@@ -5,6 +5,7 @@ import json
 from isetool.ise import ISE
 import os
 import pprint
+from json import JSONDecodeError
 
 pp = pprint.PrettyPrinter(indent=4)
 
@@ -58,7 +59,10 @@ def cli(ctx, config):
 def userlist(obj, filter_field, filter_operator, filter_match):
     """List users on the ISE deployment."""
 
-    cfg = json.load(obj['config'])
+    try:
+        cfg = json.load(obj["config"])
+    except JSONDecodeError as err:
+        raise SystemExit(f"Unable to parse configuration file: {err}") from err
 
     if filter_match:
         filter = filter_field + "." + filter_operator + "." + filter_match
