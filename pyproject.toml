@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "isetool"
-version = "1.0.2"
+version = "1.0.3"
 description = "Command line for querying a Cisco ISE server"
 authors = ["Rob Woodward <rob@emailplus.org>"]
 license = "BSD-2-Clause"
